@@ -23,7 +23,16 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
+from django.views.generic.edit import FormView
 
+from bootstrap_datepicker_demo import forms
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
+
+
+class ContactView(FormView):
+    form_class = forms.DemoForm
+    template_name = 'bootstrap_datepicker_demo/demo.html'
+    def form_valid(self, form):
+        return HttpResponse("DONE.")
