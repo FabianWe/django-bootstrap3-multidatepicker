@@ -1,3 +1,9 @@
+# ignore any sqlite3 databases
+*.sqlite3
+
+
+# default stuff from github
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,4 +1,4 @@
-# __init__.py
+# views.py
 
 # Copyright (C) 2016 Fabian Wenzelmann
 #
@@ -18,3 +18,12 @@
 # along with django-bootstrap3-datepicker.
 # If not, see <http://www.gnu.org/licenses/>.
 #
+
+from django.shortcuts import render
+
+# Create your views here.
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")

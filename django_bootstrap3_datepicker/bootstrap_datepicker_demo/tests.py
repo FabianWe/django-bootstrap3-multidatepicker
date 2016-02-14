@@ -1,4 +1,4 @@
-# __init__.py
+# tests.py
 
 # Copyright (C) 2016 Fabian Wenzelmann
 #
@@ -18,3 +18,7 @@
 # along with django-bootstrap3-datepicker.
 # If not, see <http://www.gnu.org/licenses/>.
 #
+
+from django.test import TestCase
+
+# Create your tests here.

@@ -1,4 +1,4 @@
-# __init__.py
+# urls.py
 
 # Copyright (C) 2016 Fabian Wenzelmann
 #
@@ -18,3 +18,13 @@
 # along with django-bootstrap3-datepicker.
 # If not, see <http://www.gnu.org/licenses/>.
 #
+
+from . import views
+
+from django.conf.urls import url
+
+from . import views
+
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+]
