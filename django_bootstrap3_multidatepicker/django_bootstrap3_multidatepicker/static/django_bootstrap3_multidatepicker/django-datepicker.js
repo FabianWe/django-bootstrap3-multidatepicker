@@ -19,6 +19,7 @@ function DjangoBootstrapDatePicker(picker_id, input_id) {
   // a class that stores the picker_id and input_id
   this.picker_id = picker_id;
   this.input_id = input_id;
+  this.dates = [];
 }
 
 DjangoBootstrapDatePicker.prototype.jsonDateFormat = function (date) {
@@ -45,14 +46,22 @@ DjangoBootstrapDatePicker.prototype.update_picker_input = function (sort) {
   if (typeof(sort)==='undefined') sort = true;
   // create a list of all dates in the format
   var dates = $(this.picker_id).datepicker('getDates');
-  if (sort) {
-    dates.sort(function(a,b) {
-      return a - b;
-    });
+  this.dates = dates;
+
+  var resultStr = "";
+
+  if (dates.length != 0) {
+    if (sort) {
+      dates.sort(function(a,b) {
+        return a - b;
+      });
+    }
+    var jsonData = [];
+    for (var i = 0; i < dates.length; i++) {
+      jsonData.push(this.jsonDateFormat(dates[i]));
+    }
+    resultStr = JSON.stringify(jsonData);
   }
-  var jsonData = [];
-  for (var i = 0; i < dates.length; i++) {
-    jsonData.push(this.jsonDateFormat(dates[i]));
-  }
-  $(this.input_id).val(JSON.stringify(jsonData));
+
+  $(this.input_id).val(resultStr);
 };

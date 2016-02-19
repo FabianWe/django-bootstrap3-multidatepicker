@@ -12,19 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.views.generic.edit import FormView
+from . import views
+from django.conf.urls import include, url
 
-from .forms import *
-
-# Create your views here.
-def test(request):
-    return HttpResponse("Hallo")
-
-class MultiDateForm(FormView):
-    template_name = 'demo/multi_date.html'
-    form_class = ContactForm
-
-    def form_valid(self, form):
-        return HttpResponse("Success")
+urlpatterns = [
+    url(r'^show/', views.MultiDateForm.as_view()),
+]
