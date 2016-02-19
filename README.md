@@ -14,5 +14,13 @@ Because that's not so much change I'll actually copy a lot from this code base.
 # Notice
 I've just started working on this package, so there's just chaos yet!
 
+# Credits
+I've used some libraries and I wish to thank the people who wrote them!
+- Of course the [Django](https://www.djangoproject.com/) developers
+- [bootstrap3_datepicker](http://bootstrap-datepicker.readthedocs.org/en/latest/index.html)
+- [JavaScript Date Format](http://blog.stevenlevithan.com/archives/date-time-format)
+
+And all the people I've just forgotten ;).
+
 # License
 Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
