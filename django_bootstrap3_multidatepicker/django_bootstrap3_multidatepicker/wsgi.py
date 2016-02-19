@@ -12,13 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#!/usr/bin/env python
+"""
+WSGI config for django_bootstrap3_multidatepicker project.
+
+It exposes the WSGI callable as a module-level variable named ``application``.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/1.9/howto/deployment/wsgi/
+"""
+
 import os
-import sys
 
-if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_bootstrap3_datepicker.settings")
+from django.core.wsgi import get_wsgi_application
 
-    from django.core.management import execute_from_command_line
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_bootstrap3_multidatepicker.settings")
 
-    execute_from_command_line(sys.argv)
+application = get_wsgi_application()
