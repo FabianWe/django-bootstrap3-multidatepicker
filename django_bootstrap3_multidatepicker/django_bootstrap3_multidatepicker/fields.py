@@ -12,6 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from django.forms import fields
+from django.core.exceptions import ValidationError
+from django.utils.translation import ugettext_lazy as _, ungettext_lazy
+
+import json
+import datetime
+
 class DateListField(fields.CharField):
     # TODO
     # define widget here
@@ -52,6 +59,6 @@ class DateListField(fields.CharField):
                 y, m, d = split
                 y, m, d = int(y), int(m), int(d)
                 result.append(datetime.date(y, m, d))
-        except (ValueError, TypeError):
+        except (ValueError, TypeError, json.JSONDecodeError):
             raise ValidationError(self.error_messages['invalid'], code='invalid')
         return result
