@@ -24,3 +24,6 @@ And all the people I've just forgotten ;).
 
 # License
 Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+
+# Example Usage
+
