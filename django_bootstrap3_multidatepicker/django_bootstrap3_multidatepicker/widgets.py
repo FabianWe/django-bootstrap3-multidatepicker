@@ -75,7 +75,7 @@ class BootstrapDatepickerInput(HiddenInput):
             self.options = False
         else:
             self.options = options and options.copy() or {}
-            self.options['multidate'] = True # TODO wrong place
+            self.options['multidate'] = True
 
     def input_tags(self):
         return '<input{input_attrs}>', '</input>'
@@ -137,6 +137,4 @@ class BootstrapDatepickerInput(HiddenInput):
         # hopefully this is correct...
         js = js.format(var_name=self.js_var, picker_id=self.picker_id, input_id=input_attrs['id'], options=json.dumps(self.options))
         content = div + '\n' + input_ + '\n' + js
-        print(js)
         return content
-        # return 'TOLL'
