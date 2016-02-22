@@ -27,5 +27,23 @@ Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/
 
 # Example Usage
 There is a small demo included in this package.
-However make sure that:
-- `django_bootstrap3_multidatepicker` and `bootstrap3` are contained in your `INSTALLED_APPS`
+However make sure that `'django_bootstrap3_multidatepicker'` and `'bootstrap3'` are contained in your `'INSTALLED_APPS'`.
+
+There is a widget called `BootstrapDatepickerInput` and a form field `DateListField`.
+They should be used together, otherwise I can't guarantee anything ;).
+
+The `DateListField` stores the dates as python list of `datetime.date` objects.
+The hidden input stores a json list containing all the selected dates in the form `"yyyy/mm/dd"`, e.g. `"2016/02/22"`.
+It's method `to_python` gets the string from the hidden input, tries to parse them in the given format and returns the
+list of all dates.
+
+Here's a small example that displays a calendar and lets the user select the inputs.
+
+```python
+from django import forms
+
+from django_bootstrap3_multidatepicker import widgets, fields
+
+class MyForm(forms.Form):
+    dates = fields.DateListField(widget=widgets.BootstrapDatepickerInput)
+```
