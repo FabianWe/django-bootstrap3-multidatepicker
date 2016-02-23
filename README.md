@@ -6,6 +6,7 @@ The aim of this package is to provide widgets and form fields for Django that us
 
 There are some packages that already try to do this, however I've never found one with working
 multidate support.
+The package's homepage can be found [here](https://github.com/FabianWe/django-bootstrap3-multidatepicker) on GitHub.
 
 I'll slightly follow the package as provide [here](https://github.com/nkunihiko/django-bootstrap3-datetimepicker).
 This package supports single date selection, mine will cover multidate selection.
@@ -20,7 +21,7 @@ I've used some libraries and I wish to thank the people who wrote them!
 - [bootstrap3_datepicker](http://bootstrap-datepicker.readthedocs.org/en/latest/index.html)
 - [JavaScript Date Format](http://blog.stevenlevithan.com/archives/date-time-format)
 
-And all the people I've just forgotten ;).
+And all the people I've forgotten ;).
 
 # License
 Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
@@ -28,6 +29,15 @@ Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/
 # Example Usage
 There is a small demo included in this package.
 However make sure that `'django_bootstrap3_multidatepicker'` and `'bootstrap3'` are contained in your `'INSTALLED_APPS'`.
+
+You should also change the bootstrap3 default behaviour and take care that `'javascript_in_head'` is set to `True`, i.e.
+put in your *settings.py*:
+
+```python
+BOOTSTRAP3 = {
+    'javascript_in_head': True,
+}
+```
 
 There is a widget called `BootstrapDatepickerInput` and a form field `DateListField`.
 They should be used together, otherwise I can't guarantee anything ;).

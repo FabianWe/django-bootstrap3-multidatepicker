@@ -121,6 +121,7 @@ class BootstrapDatepickerInput(HiddenInput):
 
 
     def render(self, name, value, attrs=None):
+        print(value)
         input_attrs = self.build_attrs(attrs, type=self.input_type, name=name)
         icon_attrs = dict([(key, conditional_escape(val)) for key, val in self.icon_attrs.items()])
         if not self.picker_id:
@@ -137,4 +138,4 @@ class BootstrapDatepickerInput(HiddenInput):
         # hopefully this is correct...
         js = js.format(var_name=self.js_var, picker_id=self.picker_id, input_id=input_attrs['id'], options=json.dumps(self.options))
         content = div + '\n' + input_ + '\n' + js
-        return content
+        return mark_safe(force_text(content))
