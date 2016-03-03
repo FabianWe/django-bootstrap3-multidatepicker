@@ -55,10 +55,39 @@ from django import forms
 
 from django_bootstrap3_multidatepicker import widgets, fields
 
-class MyForm(forms.Form):
-    dates = fields.DateListField(widget=widgets.BootstrapDatepickerInput)
+class YourForm(forms.Form):
+    dates = fields.DateListField(label='Select Dates')
 ```
 
 Adding a template etc. will give you a calendar like this:
 
 ![Example of the widget](doc/imgs/widget_example.png)
+
+A view could look like this:
+
+```python
+class MultiDateForm(FormView):
+    template_name = YourTemplate
+    form_class = YourForm
+
+    def form_valid(self, form):
+        dates = form.cleaned_data['dates']
+        return render(self.request, YourSuccessTemplate, {'dates': dates})
+```
+
+In YourSuccessTemplate you can do something like this:
+
+```html
+The following dates were selected:
+
+{% if dates %}
+<ul>
+  {% for date in dates %}
+    <li>{{ date|date:"SHORT_DATE_FORMAT" }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+```
+
+Your result will look something like this:
+![Success page](doc/imgs/success.png)
