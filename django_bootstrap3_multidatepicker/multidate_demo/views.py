@@ -21,9 +21,9 @@ from .forms import *
 # Create your views here.
 
 class MultiDateForm(FormView):
-    template_name = 'demo/multi_date.html'
+    template_name = 'multidate_demo/multi_date.html'
     form_class = ContactForm
 
     def form_valid(self, form):
         dates = form.cleaned_data['dates']
-        return render(self.request, 'demo/multidate_success.html', {'dates': dates})
+        return render(self.request, 'multidate_demo/multidate_success.html', {'dates': dates})

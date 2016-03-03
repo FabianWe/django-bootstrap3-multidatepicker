@@ -46,7 +46,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django_bootstrap3_multidatepicker',
-    'demo',
+    'multidate_demo',
     'bootstrap3',
     'django.contrib.admin',
     'django.contrib.auth',

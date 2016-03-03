@@ -1,4 +1,4 @@
-{# multidate_success.html #}
+{# base.html #}
 
 {# Copyright 2016 Fabian Wenzelmann #}
 {# #}
@@ -14,26 +14,17 @@
 {# See the License for the specific language governing permissions and #}
 {# limitations under the License. #}
 
-{% extends 'demo/base.html' %}
+{% extends 'multidate_demo/bootstrap.html' %}
 
 {% load bootstrap3 %}
 
-{% block title %}
-    Multidate Picker Demo - Success
-{% endblock %}
+{% block bootstrap3_content %}
+    <div class="container">
+        {% block heading %}<h1>(no title)</h1>{% endblock %}
 
-{% block heading %}
-<h1>Multidate Picker Demo - Success</h1>
-{% endblock %}
+        {% bootstrap_messages %}
 
-{% block content %}
-The following dates were selected:
+        <p>{% block content %}(no content){% endblock %}</p>
+    </div>
 
-{% if dates %}
-<ul>
-  {% for date in dates %}
-    <li>{{ date|date:"SHORT_DATE_FORMAT" }}</li>
-  {% endfor %}
-</ul>
-{% endif %}
 {% endblock %}

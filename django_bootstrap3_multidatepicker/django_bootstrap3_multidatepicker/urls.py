@@ -32,5 +32,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^test/', include('demo.urls'))
+    url(r'^demo/', include('multidate_demo.urls'))
 ]
