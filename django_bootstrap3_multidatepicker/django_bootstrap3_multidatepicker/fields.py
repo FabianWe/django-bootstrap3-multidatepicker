@@ -19,9 +19,12 @@ from django.utils.translation import ugettext_lazy as _, ungettext_lazy
 import json
 import datetime
 
+from .widgets import BootstrapDatepickerInput
+
 class DateListField(fields.CharField):
-    # TODO
-    # define widget here
+
+    widget = BootstrapDatepickerInput
+
     default_error_messages = {
         'invalid': _('Enter a list of dates.'),
     }
