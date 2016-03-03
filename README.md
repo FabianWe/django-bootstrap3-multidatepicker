@@ -61,5 +61,4 @@ class MyForm(forms.Form):
 
 Adding a template etc. will give you a calendar like this:
 
-Reference-style:
-![alt text][doc/imgs/widget_example.png]
+![Example of the widget][doc/imgs/widget_example.png?raw=true]
