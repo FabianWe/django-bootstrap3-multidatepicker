@@ -35,5 +35,6 @@
 <form class="form" method="POST">
   {% csrf_token %}
   {% bootstrap_form form %}
+  {% bootstrap_button '<span class="glyphicon glyphicon-circle-arrow-right"></span> Save' button_type="submit" button_class="btn-primary" %}
 </form>
 {% endblock %}
