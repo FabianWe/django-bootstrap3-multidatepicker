@@ -61,4 +61,4 @@ class MyForm(forms.Form):
 
 Adding a template etc. will give you a calendar like this:
 
-![Example of the widget][doc/imgs/widget_example.png?raw=true]
+![Example of the widget](doc/imgs/widget_example.png)
