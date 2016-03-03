@@ -17,4 +17,4 @@ from django import forms
 from django_bootstrap3_multidatepicker import widgets, fields
 
 class ContactForm(forms.Form):
-    dates = fields.DateListField(label='Select Dates', widget=widgets.BootstrapDatepickerInput)
+    dates = fields.DateListField(label='Select Dates')

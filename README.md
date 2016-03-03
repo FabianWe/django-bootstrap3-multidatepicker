@@ -13,13 +13,14 @@ This package supports single date selection, mine will cover multidate selection
 Because that's not so much change I'll actually copy a lot from this code base.
 
 # Notice
-I've just started working on this package, so there's just chaos yet!
+This package does what I want for a specific purpose, if you have any suggestions contact me!
+This package is still in an early beta.
 
 # Credits
 I've used some libraries and I wish to thank the people who wrote them!
-- Of course the [Django](https://www.djangoproject.com/) developers
-- [bootstrap3_datepicker](http://bootstrap-datepicker.readthedocs.org/en/latest/index.html)
-- [JavaScript Date Format](http://blog.stevenlevithan.com/archives/date-time-format)
+* Of course the [Django](https://www.djangoproject.com/) developers
+* [bootstrap3_datepicker](http://bootstrap-datepicker.readthedocs.org/en/latest/index.html)
+* [JavaScript Date Format](http://blog.stevenlevithan.com/archives/date-time-format)
 
 And all the people I've forgotten ;).
 
@@ -57,3 +58,8 @@ from django_bootstrap3_multidatepicker import widgets, fields
 class MyForm(forms.Form):
     dates = fields.DateListField(widget=widgets.BootstrapDatepickerInput)
 ```
+
+Adding a template etc. will give you a calendar like this:
+
+Reference-style:
+![alt text][doc/imgs/widget_example.png]

@@ -19,12 +19,11 @@ from django.views.generic.edit import FormView
 from .forms import *
 
 # Create your views here.
-def test(request):
-    return HttpResponse("Hallo")
 
 class MultiDateForm(FormView):
     template_name = 'demo/multi_date.html'
     form_class = ContactForm
 
     def form_valid(self, form):
-        return HttpResponse("Success")
+        dates = form.cleaned_data['dates']
+        return render(self.request, 'demo/multidate_success.html', {'dates': dates})
