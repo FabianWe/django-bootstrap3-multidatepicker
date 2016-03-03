@@ -53,7 +53,7 @@ Here's a small example that displays a calendar and lets the user select the inp
 ```python
 from django import forms
 
-from django_bootstrap3_multidatepicker import widgets, fields
+from from django_bootstrap3_multidatepicker.django_bootstrap3_multidatepicker import widgets, fields import widgets, fields
 
 class YourForm(forms.Form):
     dates = fields.DateListField(label='Select Dates')

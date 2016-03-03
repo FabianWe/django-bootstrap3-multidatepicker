@@ -1,0 +1,3 @@
+include LICENSE
+include README.rst
+recursive-include django_bootstrap3_multidatepicker *.html *.png *.js *.css *.py
