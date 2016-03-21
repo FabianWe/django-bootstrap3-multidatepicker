@@ -41,10 +41,6 @@ class DateListField(fields.CharField):
                 elif isinstance(v, datetime.date):
                     new_list.append(v)
             return new_list
-        if isinstance(value, datetime.datetime):
-            return value.date()
-        if isinstance(value, datetime.date):
-            return value
         if value in self.empty_values:
             return None
         value = super(DateListField, self).to_python(value)
@@ -62,6 +58,6 @@ class DateListField(fields.CharField):
                 y, m, d = split
                 y, m, d = int(y), int(m), int(d)
                 result.append(datetime.date(y, m, d))
-        except (ValueError, TypeError, json.JSONDecodeError):
+        except (ValueError, TypeError):
             raise ValidationError(self.error_messages['invalid'], code='invalid')
         return result

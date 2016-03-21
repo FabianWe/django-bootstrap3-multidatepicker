@@ -130,6 +130,7 @@ class BootstrapDatepickerInput(HiddenInput):
         self.div_attrs['id'] = self.picker_id
         if not self.js_var:
             self.js_var = (input_attrs.get('id', '') + '_jsvar').replace(' ', '_')
+            self.js_var = self.js_var.replace('-', '_')
         div = self.div()
         div = format_html(div, div_attrs=flatatt(self.div_attrs), icon_attrs=flatatt(icon_attrs))
         input_ = self.input()

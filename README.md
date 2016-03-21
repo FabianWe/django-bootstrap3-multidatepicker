@@ -29,7 +29,7 @@ Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/
 
 # Example Usage
 There is a small demo included in this package.
-However make sure that `'django_bootstrap3_multidatepicker'` and `'bootstrap3'` are contained in your `'INSTALLED_APPS'`.
+However make sure that `'django_bootstrap3_multidatepicker.django_bootstrap3_multidatepicker.django_bootstrap3_multidatepicker.django_bootstrap3_multidatepicker'` and `'bootstrap3'` are contained in your `'INSTALLED_APPS'`.
 
 You should also change the bootstrap3 default behaviour and take care that `'javascript_in_head'` is set to `True`, i.e.
 put in your *settings.py*:

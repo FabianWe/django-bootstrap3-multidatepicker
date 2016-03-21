@@ -16,13 +16,13 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-bootstrap3-multidatepicker',
-    version='0.1.2',
+    version='0.1.4',
     description='Datepicker that supports the selection of multiple dates for Django, using Bootstrap Twitter.',
     long_description=open('README.rst').read(),
     author='Fabian Wenzelmann',
     author_email='fabianwenzelmann@posteo.de',
     url='https://github.com/FabianWe/django-bootstrap3-multidatepicker',
-    license='Apache Software License',
+    license='Apache License 2.0',
     classifiers = [
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: Apache Software License',

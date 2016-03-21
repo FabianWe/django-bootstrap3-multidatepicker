@@ -14,7 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-
 function DjangoBootstrapDatePicker(picker_id, input_id) {
   // a class that stores the picker_id and input_id
   this.picker_id = picker_id;
@@ -55,10 +54,11 @@ DjangoBootstrapDatePicker.prototype.set_dates = function(str) {
     var year = parseInt(date_parts[0]);
     var month = parseInt(date_parts[1]) - 1;
     var day = parseInt(date_parts[2]);
-    var date = new Date(year, month, day);
+    var date = new Date.UTC(year, month, day);
     dates.push(date);
   }
   $(this.picker_id).datepicker('setDates', dates);
+  this.dates = dates;
 };
 
 function call_me(picker) {
@@ -78,7 +78,7 @@ DjangoBootstrapDatePicker.prototype.update_picker_input = function(sort) {
     sort = true;
   }
   // create a list of all dates in the format
-  var dates = $(this.picker_id).datepicker('getDates');
+  var dates = $(this.picker_id).datepicker('getUTCDates');
 
   if (sort) {
     dates.sort(function(a,b) {
