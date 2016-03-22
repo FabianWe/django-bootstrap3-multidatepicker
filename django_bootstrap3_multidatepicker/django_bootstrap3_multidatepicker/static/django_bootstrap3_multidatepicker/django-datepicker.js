@@ -62,7 +62,7 @@ DjangoBootstrapDatePicker.prototype.set_dates = function(str) {
     var year = parseInt(date_parts[0]);
     var month = parseInt(date_parts[1]) - 1;
     var day = parseInt(date_parts[2]);
-    var date = new Date.UTC(year, month, day);
+    var date = new Date(Date.UTC(year, month, day));
     dates.push(date);
   }
   $(this.picker_id).datepicker('setUTCDates', dates);

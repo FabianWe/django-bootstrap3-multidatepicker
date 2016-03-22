@@ -21,6 +21,16 @@
 {% block bootstrap3_extra_head %}
 {{ block.super }}
 {{ form.media }}
+<script type="text/javascript">
+  $(document).ready(function() {
+    id_dates_jsvar.afterChange = function() {
+      $('#current_dates li').remove();
+      for (var i = 0; i < id_dates_jsvar.dates.length; i++) {
+        $('#current_dates').append($('<li>').text(id_dates_jsvar.dates[i].toDateString()));
+      }
+    }
+  });
+</script>
 {% endblock %}
 
 {% block title %}
@@ -37,4 +47,7 @@
   {% bootstrap_form form %}
   {% bootstrap_button '<span class="glyphicon glyphicon-circle-arrow-right"></span> Save' button_type="submit" button_class="btn-primary" %}
 </form>
+<h2>Currently selected Dates</h2>
+<ul id="current_dates">
+</ul>
 {% endblock %}
