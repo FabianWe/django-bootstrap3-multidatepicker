@@ -23,10 +23,10 @@
 {{ form.media }}
 <script type="text/javascript">
   $(document).ready(function() {
-    id_dates_jsvar.afterChange = function() {
+    bootstrap_picker.afterChange = function() {
       $('#current_dates li').remove();
-      for (var i = 0; i < id_dates_jsvar.dates.length; i++) {
-        var date = id_dates_jsvar.dates[i];
+      for (var i = 0; i < bootstrap_picker.dates.length; i++) {
+        var date = bootstrap_picker.dates[i];
         var date_str = '' + date.getUTCFullYear() + '/' + date.getUTCMonth() + '/' + date.getUTCDate();
         $('#current_dates').append($('<li>').text(date_str));
       }
@@ -44,6 +44,7 @@
 {% endblock %}
 
 {% block content %}
+{{ form.dates.picker_id }}
 <form class="form" method="POST">
   {% csrf_token %}
   {% bootstrap_form form %}

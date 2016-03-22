@@ -11,6 +11,9 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   third_party
+   quickstart
+
 About
 =====
 
@@ -27,7 +30,7 @@ Because that's not so much change I'll actually copy a lot from this code base.
 License
 =======
 
-foodle is licensed under the `Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0>`_::
+Django Bootstrap3 Multidatepicker is licensed under the `Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0>`_::
 
   Copyright 2016 Fabian Wenzelmann
 
@@ -43,7 +46,7 @@ foodle is licensed under the `Apache License, Version 2.0 <http://www.apache.org
   See the License for the specific language governing permissions and
   limitations under the License.
 
-There are many libraries used by this project, see :doc:`here <third_party>` for library license information.
+There are some libraries used by this project, see :doc:`here <third_party>` for library license information.
 
 Installation
 ============
@@ -56,6 +59,27 @@ You need the following:
 * python3 (tested with python 3.4.3)
 * `django <https://www.djangoproject.com/>`_ (tested with 1.9.2)
 * `django-bootstrap3 <https://pypi.python.org/pypi/django-bootstrap3>`_
+
+Notice
+======
+
+This package does what I want for a specific purpose, if you have any
+suggestions contact me! This package is still in an early beta.
+
+Credits
+=======
+
+I've used some libraries and I wish to thank the people who wrote them!
+
+* Of course the `Django <https://www.djangoproject.com/>`_ developers
+* `bootstrap3_datepicker <http://bootstrap-datepicker.readthedocs.org/en/latest/index.html>`_ - thanks for the inspiration
+* `Django Bootstrap3 Datepicker <http://bootstrap-datepicker.readthedocs.org/en/latest/index.html>`_
+* All the people I've forgotten :)
+
+Quickstart
+==========
+
+For a simple example see :doc:`here <quickstart>`.
 
 Indices and tables
 ==================
