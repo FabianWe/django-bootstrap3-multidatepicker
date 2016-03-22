@@ -151,7 +151,6 @@ class BootstrapDatepickerInput(HiddenInput):
             def __iter__(self):
                 yield 'django_bootstrap3_multidatepicker/django-datepicker.min.js'
                 yield 'django_bootstrap3_multidatepicker/bootstrap-datepicker.min.js'
-                yield 'django_bootstrap3_multidatepicker/date.format.min.js'
                 datepicker_lang = BootstrapDatepickerInput.get_picker_language()
                 if datepicker_lang is not None and datepicker_lang not in ('en', 'en-us'):
                     yield 'django_bootstrap3_multidatepicker/datepicker_locales/bootstrap-datepicker.%s.min.js' % (datepicker_lang)
