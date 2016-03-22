@@ -36,14 +36,22 @@ DjangoBootstrapDatePicker.prototype.bind_picker = function(options) {
   this.set_dates();
   // create an event that updates the value of an input field when the
   // selection changes
-  $(this.picker_id).on("changeDate", call_me(this));
+  // $(this.picker_id).on("changeDate", call_me(this));
+  var self = this;
+  $(this.picker_id).on("changeDate", function() {
+    self.on_change();
+  });
 };
+
 
 DjangoBootstrapDatePicker.prototype.set_dates = function(str) {
   if (typeof(str)==='undefined') {
     str = $(this.input_id).val();
     str = str.trim();
     if (!str) {
+      this.dates = [];
+      $(this.picker_id).datepicker('setUTCDates', []);
+      this.afterChange();
       return;
     }
   }
@@ -57,8 +65,9 @@ DjangoBootstrapDatePicker.prototype.set_dates = function(str) {
     var date = new Date.UTC(year, month, day);
     dates.push(date);
   }
-  $(this.picker_id).datepicker('setDates', dates);
+  $(this.picker_id).datepicker('setUTCDates', dates);
   this.dates = dates;
+  this.afterChange();
 };
 
 function call_me(picker) {
@@ -71,6 +80,7 @@ DjangoBootstrapDatePicker.prototype.on_change = function() {
   // call our update_input function, this way later on you could specify
   // a different behaviour (just be sure to call update_input)
   this.update_picker_input(true);
+  this.afterChange();
 }
 
 DjangoBootstrapDatePicker.prototype.update_picker_input = function(sort) {
@@ -89,8 +99,14 @@ DjangoBootstrapDatePicker.prototype.update_picker_input = function(sort) {
   for (var i = 0; i < dates.length; i++) {
     jsonData.push(this.jsonDateFormat(dates[i]));
   }
-  var resultStr = JSON.stringify(jsonData);
+  var resultStr = '';
+  if (dates.length > 0) {
+    resultStr = JSON.stringify(jsonData);
+  }
   this.dates = dates;
   $(this.input_id).val(resultStr);
-  return true;
 };
+
+DjangoBootstrapDatePicker.prototype.afterChange = function() {
+
+}
