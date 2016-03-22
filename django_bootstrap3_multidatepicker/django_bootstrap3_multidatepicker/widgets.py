@@ -138,8 +138,6 @@ class BootstrapDatepickerInput(HiddenInput):
                         lang_code = lang.split('-')[0]
                         if lang_code in locales:
                             datepicker_lang = locales[lang_code]
-            if datepicker_lang is None:
-                datepicker_lang = 'en-us'
             return datepicker_lang
         else:
             return None
@@ -154,8 +152,7 @@ class BootstrapDatepickerInput(HiddenInput):
                 yield 'django_bootstrap3_multidatepicker/django-datepicker.min.js'
                 yield 'django_bootstrap3_multidatepicker/bootstrap-datepicker.min.js'
                 yield 'django_bootstrap3_multidatepicker/date.format.min.js'
-                datepicker_lang = BootstrapDatepickerInput.get_picker_language(
-                )
+                datepicker_lang = BootstrapDatepickerInput.get_picker_language()
                 if datepicker_lang is not None and datepicker_lang not in ('en', 'en-us'):
                     yield 'django_bootstrap3_multidatepicker/datepicker_locales/bootstrap-datepicker.%s.min.js' % (datepicker_lang)
         css = {
@@ -189,7 +186,7 @@ class BootstrapDatepickerInput(HiddenInput):
             self.options = options and options.copy() or {}
             self.options['multidate'] = True
             lang = BootstrapDatepickerInput.get_picker_language()
-            if 'language' not in self.options and lang is not None:
+            if 'language' not in self.options and lang is not None and lang not in ('en', 'en-us'):
                 self.options['language'] = lang
 
     def input_tags(self):
