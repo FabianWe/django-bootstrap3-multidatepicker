@@ -13,24 +13,31 @@ Contents:
 
    third_party
    quickstart
+   class_details
 
 About
 =====
 
-A datepicker that supports the selection of multiple dates for Django, using Bootstrap Twitter.
+A datepicker that supports the selection of multiple dates for Django,
+using Bootstrap Twitter.
 
-The aim of this package is to provide widgets and form fields for Django that use bootstrap-datepicker.
-There are some packages that already try to do this, however I've never found one with working multidate support.
-The package's homepage can be found here on `GitHub <https://github.com/FabianWe/django-bootstrap3-multidatepicker>`_.
+The aim of this package is to provide widgets and form fields for Django that
+use bootstrap-datepicker.
+There are some packages that already try to do this, however I've never found
+one with working multidate support.
+The package's homepage can be found here on
+`GitHub <https://github.com/FabianWe/django-bootstrap3-multidatepicker>`_.
 
-I'll slightly follow the package as provide `here <https://github.com/nkunihiko/django-bootstrap3-datetimepicker>`_.
+I'll slightly follow the package as provide
+`here <https://github.com/nkunihiko/django-bootstrap3-datetimepicker>`_.
 This package supports single date selection, mine will cover multidate selection.
 Because that's not so much change I'll actually copy a lot from this code base.
 
 License
 =======
 
-Django Bootstrap3 Multidatepicker is licensed under the `Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0>`_::
+Django Bootstrap3 Multidatepicker (and this documentation) is licensed under
+the `Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0>`_::
 
   Copyright 2016 Fabian Wenzelmann
 
@@ -46,7 +53,8 @@ Django Bootstrap3 Multidatepicker is licensed under the `Apache License, Version
   See the License for the specific language governing permissions and
   limitations under the License.
 
-There are some libraries used by this project, see :doc:`here <third_party>` for library license information.
+There are some libraries used by this project, see :doc:`here <third_party>`
+for library license information.
 
 Installation
 ============

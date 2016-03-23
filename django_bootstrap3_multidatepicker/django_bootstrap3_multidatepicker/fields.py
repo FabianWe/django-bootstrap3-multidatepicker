@@ -56,7 +56,7 @@ class DateListField(fields.CharField):
                 m, y, d = None, None, None
                 split = date.split('/')
                 y, m, d = split
-                y, m, d = int(y), int(m), int(d)
+                y, m, d = int(y), int(m) + 1, int(d)
                 result.append(datetime.date(y, m, d))
         except (ValueError, TypeError):
             raise ValidationError(self.error_messages['invalid'], code='invalid')

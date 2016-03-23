@@ -32,7 +32,7 @@ The following dates were selected:
 {% if dates %}
 <ul>
   {% for date in dates %}
-    <li>{{ date|date:"SHORT_DATE_FORMAT" }}</li>
+    <li>{{ date|date:"DATE_FORMAT" }}</li>
   {% endfor %}
 </ul>
 {% endif %}

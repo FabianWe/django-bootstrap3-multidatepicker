@@ -68,7 +68,7 @@ DjangoBootstrapDatePicker.prototype.set_dates = function(str) {
   for (var i = 0; i < date_strs.length; i++) {
     var date_parts = date_strs[i].split('/');
     var year = parseInt(date_parts[0]);
-    var month = parseInt(date_parts[1]) - 1;
+    var month = parseInt(date_parts[1]);
     var day = parseInt(date_parts[2]);
     var date = new Date(Date.UTC(year, month, day));
     dates.push(date);

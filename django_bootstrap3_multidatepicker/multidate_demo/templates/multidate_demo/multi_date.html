@@ -27,7 +27,7 @@
       $('#current_dates li').remove();
       for (var i = 0; i < bootstrap_picker.dates.length; i++) {
         var date = bootstrap_picker.dates[i];
-        var date_str = '' + date.getUTCFullYear() + '/' + date.getUTCMonth() + '/' + date.getUTCDate();
+        var date_str = '' + date.getUTCFullYear() + '/' + (date.getUTCMonth() + 1) + '/' + date.getUTCDate();
         $('#current_dates').append($('<li>').text(date_str));
       }
     }
