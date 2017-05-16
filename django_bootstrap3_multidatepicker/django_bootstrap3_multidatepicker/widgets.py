@@ -12,7 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from django.forms.widgets import Widget, flatatt, HiddenInput
+from django.forms.widgets import Widget, HiddenInput
+try:
+    from django.forms.utils import flatatt
+except ImportError:
+    from django.forms.widgets import flatatt
 from django.utils.safestring import mark_safe
 from django.utils.html import conditional_escape, format_html, html_safe, escape
 from django.utils import translation
