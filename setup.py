@@ -16,7 +16,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-bootstrap3-multidatepicker',
-    version='0.1.4',
+    version='0.1.5',
     description='Datepicker that supports the selection of multiple dates for Django, using Bootstrap Twitter.',
     long_description=open('README.rst').read(),
     author='Fabian Wenzelmann',
